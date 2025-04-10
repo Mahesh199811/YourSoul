@@ -242,44 +242,40 @@ namespace YourSoulApp.Services
 
         public async Task<List<User>> GetPotentialMatchesAsync(User currentUser)
         {
-            // Get users based on gender preference
-            var query = _database.Table<User>().Where(u => u.Id != currentUser.Id);
+            // Get existing matches to filter out (do this first to avoid processing users we've already matched with)
+            var existingMatches = await GetUserMatchesAsync(currentUser.Id);
+            var matchedUserIds = existingMatches.Select(m =>
+                m.User1Id == currentUser.Id ? m.User2Id : m.User1Id).ToList();
 
+            // Build a more efficient query that includes all filtering conditions
+            var query = _database.Table<User>()
+                .Where(u => u.Id != currentUser.Id)  // Not the current user
+                .Where(u => !matchedUserIds.Contains(u.Id));  // Not already matched
+
+            // Filter by current user's gender preference
             if (currentUser.InterestedIn != "Both")
             {
                 query = query.Where(u => u.Gender == currentUser.InterestedIn);
             }
 
-            // Filter by age preference
-            query = query.Where(u => u.Age >= currentUser.MinAgePreference && u.Age <= currentUser.MaxAgePreference);
+            // Filter by current user's age preference
+            query = query.Where(u => u.Age >= currentUser.MinAgePreference &&
+                                    u.Age <= currentUser.MaxAgePreference);
 
-            // Get all potential matches
+            // Get potential matches after initial filtering
             var potentialMatches = await query.ToListAsync();
 
-            // Get existing matches to filter out
-            var existingMatches = await GetUserMatchesAsync(currentUser.Id);
-            var matchedUserIds = existingMatches.Select(m =>
-                m.User1Id == currentUser.Id ? m.User2Id : m.User1Id).ToList();
+            // Create a more efficient list for the final result
+            var mutualPreferenceMatches = new List<User>(potentialMatches.Count);
 
-            // Filter out users that are already matched
-            var filteredMatches = potentialMatches.Where(u => !matchedUserIds.Contains(u.Id)).ToList();
-
-            // Further filter matches to only include users whose preferences match the current user
-            var mutualPreferenceMatches = new List<User>();
-
-            foreach (var potentialMatch in filteredMatches)
+            // Optimize the loop for better performance
+            foreach (var match in potentialMatches)
             {
-                // Check if current user's gender matches potential match's interest
-                bool genderMatches = potentialMatch.InterestedIn == "Both" || potentialMatch.InterestedIn == currentUser.Gender;
-
-                // Check if current user's age is within potential match's age preference
-                bool ageMatches = currentUser.Age >= potentialMatch.MinAgePreference &&
-                                  currentUser.Age <= potentialMatch.MaxAgePreference;
-
-                // Only include users where both gender and age preferences match
-                if (genderMatches && ageMatches)
+                // Check mutual preference conditions
+                if ((match.InterestedIn == "Both" || match.InterestedIn == currentUser.Gender) &&
+                    (currentUser.Age >= match.MinAgePreference && currentUser.Age <= match.MaxAgePreference))
                 {
-                    mutualPreferenceMatches.Add(potentialMatch);
+                    mutualPreferenceMatches.Add(match);
                 }
             }
 
