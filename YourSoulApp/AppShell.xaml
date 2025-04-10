@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="YourSoulApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:YourSoulApp"
+    xmlns:views="clr-namespace:YourSoulApp.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="YourSoulApp">
+
+    <!-- Authentication Pages -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="login" />
+
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate views:RegisterPage}"
+        Route="register" />
+
+    <!-- Main App Tabs -->
+    <TabBar Route="main">
+        <Tab Title="Discover" Icon="discover_icon.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:DiscoverPage}" />
+        </Tab>
+
+        <Tab Title="Matches" Icon="matches_icon.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:MatchesPage}" />
+        </Tab>
+
+        <Tab Title="Chats" Icon="chat_icon.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:ChatsPage}" />
+        </Tab>
+
+        <Tab Title="Profile" Icon="profile_icon.png">
+            <ShellContent
+                ContentTemplate="{DataTemplate views:ProfilePage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

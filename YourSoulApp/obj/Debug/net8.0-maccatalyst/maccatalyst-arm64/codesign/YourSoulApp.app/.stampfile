@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64/YourSoulApp.app

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSoulApp.Views.ProfilePage"
+             xmlns:viewmodel="clr-namespace:YourSoulApp.ViewModels"
+             xmlns:models="clr-namespace:YourSoulApp.Models"
+             x:DataType="viewmodel:ProfileViewModel"
+             Title="{Binding Title}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{Binding IsEditing, Converter={StaticResource BoolToStringConverter}, ConverterParameter='Save,Edit'}"
+                     Command="{Binding IsEditing, Converter={StaticResource BoolToCommandConverter}, ConverterParameter='SaveProfileCommand,ToggleEditModeCommand'}}" />
+        
+        <ToolbarItem Text="Logout"
+                     Command="{Binding LogoutCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <RefreshView Command="{Binding RefreshProfileCommand}"
+                 IsRefreshing="{Binding IsBusy}">
+        
+        <ScrollView>
+            <Grid RowDefinitions="Auto,Auto,*"
+                  Padding="20">
+                
+                <!-- Profile Header -->
+                <Grid Grid.Row="0"
+                      RowDefinitions="Auto,Auto"
+                      ColumnDefinitions="Auto,*"
+                      Margin="0,20,0,20">
+                    
+                    <Frame Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Grid.Column="0"
+                           CornerRadius="50"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           Padding="0"
+                           IsClippedToBounds="True">
+                        
+                        <Image Source="{Binding CurrentUser.ProfileImagePath}"
+                               Aspect="AspectFill" />
+                    </Frame>
+                    
+                    <VerticalStackLayout Grid.Row="0"
+                                         Grid.Column="1"
+                                         Margin="20,0,0,0"
+                                         VerticalOptions="Center">
+                        
+                        <Label Text="{Binding CurrentUser.Name}"
+                               FontSize="24"
+                               FontAttributes="Bold" />
+                        
+                        <Label Text="{Binding CurrentUser.Age, StringFormat='{0} years old'}"
+                               FontSize="18" />
+                        
+                        <Label Text="{Binding CurrentUser.Location}"
+                               FontSize="16"
+                               TextColor="Gray" />
+                    </VerticalStackLayout>
+                </Grid>
+                
+                <!-- Profile Details -->
+                <VerticalStackLayout Grid.Row="1"
+                                     Spacing="15"
+                                     Margin="0,10,0,0">
+                    
+                    <Label Text="About Me"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                    
+                    <Editor Text="{Binding CurrentUser.Bio}"
+                            IsReadOnly="{Binding IsEditing, Converter={StaticResource InvertedBoolConverter}}"
+                            AutoSize="TextChanges"
+                            MaxLength="500" />
+                    
+                    <Label Text="Gender"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0" />
+                    
+                    <Picker SelectedItem="{Binding CurrentUser.Gender}"
+                            IsEnabled="{Binding IsEditing}">
+                        <Picker.Items>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    
+                    <Label Text="Interested In"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0" />
+                    
+                    <Picker SelectedItem="{Binding CurrentUser.InterestedIn}"
+                            IsEnabled="{Binding IsEditing}">
+                        <Picker.Items>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Both</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    
+                    <Label Text="Age Preferences"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0" />
+                    
+                    <Grid ColumnDefinitions="*,*"
+                          RowDefinitions="Auto,Auto"
+                          IsEnabled="{Binding IsEditing}">
+                        
+                        <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Min Age:"
+                               VerticalOptions="Center" />
+                        
+                        <HorizontalStackLayout Grid.Row="0"
+                                               Grid.Column="1"
+                                               Spacing="10">
+                            
+                            <Stepper Value="{Binding CurrentUser.MinAgePreference}"
+                                     Minimum="18"
+                                     Maximum="100"
+                                     Increment="1" />
+                            
+                            <Label Text="{Binding CurrentUser.MinAgePreference}"
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                        
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Max Age:"
+                               VerticalOptions="Center" />
+                        
+                        <HorizontalStackLayout Grid.Row="1"
+                                               Grid.Column="1"
+                                               Spacing="10">
+                            
+                            <Stepper Value="{Binding CurrentUser.MaxAgePreference}"
+                                     Minimum="{Binding CurrentUser.MinAgePreference}"
+                                     Maximum="100"
+                                     Increment="1" />
+                            
+                            <Label Text="{Binding CurrentUser.MaxAgePreference}"
+                                   VerticalOptions="Center" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                    
+                    <Label Text="Location"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0" />
+                    
+                    <Entry Text="{Binding CurrentUser.Location}"
+                           IsReadOnly="{Binding IsEditing, Converter={StaticResource InvertedBoolConverter}}" />
+                    
+                    <Label Text="{Binding StatusMessage}"
+                           TextColor="{StaticResource Primary}"
+                           IsVisible="{Binding StatusMessage, Converter={StaticResource StringNotNullOrEmptyBoolConverter}}"
+                           Margin="0,10,0,0" />
+                </VerticalStackLayout>
+                
+                <!-- Loading indicator -->
+                <ActivityIndicator Grid.Row="2"
+                                   IsRunning="{Binding IsBusy}"
+                                   IsVisible="{Binding IsBusy}"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Start"
+                                   Margin="0,20,0,0" />
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

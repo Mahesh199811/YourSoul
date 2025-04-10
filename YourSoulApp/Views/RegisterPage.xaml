@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSoulApp.Views.RegisterPage"
+             xmlns:viewmodel="clr-namespace:YourSoulApp.ViewModels"
+             x:DataType="viewmodel:RegisterViewModel"
+             Title="{Binding Title}">
+    
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*,Auto"
+              RowSpacing="20"
+              Padding="20">
+            
+            <Label Grid.Row="0"
+                   Text="Create Account"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource Primary}"
+                   Margin="0,20,0,0" />
+            
+            <VerticalStackLayout Grid.Row="1"
+                                 Spacing="15"
+                                 Margin="0,10,0,0">
+                
+                <Entry Placeholder="Username"
+                       Text="{Binding Username}"
+                       Keyboard="Text"
+                       ReturnType="Next" />
+                
+                <Entry Placeholder="Password"
+                       Text="{Binding Password}"
+                       IsPassword="True"
+                       ReturnType="Next" />
+                
+                <Entry Placeholder="Confirm Password"
+                       Text="{Binding ConfirmPassword}"
+                       IsPassword="True"
+                       ReturnType="Next" />
+                
+                <Entry Placeholder="Full Name"
+                       Text="{Binding Name}"
+                       Keyboard="Text"
+                       ReturnType="Next" />
+                
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Age:"
+                           VerticalOptions="Center"
+                           WidthRequest="100" />
+                    <Stepper Value="{Binding Age}"
+                             Minimum="18"
+                             Maximum="100"
+                             Increment="1" />
+                    <Label Text="{Binding Age}"
+                           VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Gender:"
+                           VerticalOptions="Center"
+                           WidthRequest="100" />
+                    <Picker SelectedItem="{Binding Gender}"
+                            WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Other</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Interested In:"
+                           VerticalOptions="Center"
+                           WidthRequest="100" />
+                    <Picker SelectedItem="{Binding InterestedIn}"
+                            WidthRequest="200">
+                        <Picker.Items>
+                            <x:String>Male</x:String>
+                            <x:String>Female</x:String>
+                            <x:String>Both</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </HorizontalStackLayout>
+                
+                <Editor Placeholder="Bio (optional)"
+                        Text="{Binding Bio}"
+                        AutoSize="TextChanges"
+                        MaxLength="500" />
+                
+                <Label Text="{Binding ErrorMessage}"
+                       TextColor="Red"
+                       IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotNullOrEmptyBoolConverter}}" />
+                
+                <Button Text="Register"
+                        Command="{Binding RegisterCommand}"
+                        IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"
+                        HorizontalOptions="Fill"
+                        Margin="0,10,0,0" />
+                
+                <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                   IsVisible="{Binding IsBusy}"
+                                   HorizontalOptions="Center" />
+            </VerticalStackLayout>
+            
+            <Button Grid.Row="2"
+                    Text="Already have an account? Login"
+                    Command="{Binding GoToLoginCommand}"
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource Primary}"
+                    FontSize="14"
+                    HorizontalOptions="Center" />
+        </Grid>
+    </ScrollView>
+</ContentPage>

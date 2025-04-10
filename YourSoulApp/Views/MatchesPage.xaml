@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSoulApp.Views.MatchesPage"
+             xmlns:viewmodel="clr-namespace:YourSoulApp.ViewModels"
+             xmlns:models="clr-namespace:YourSoulApp.Models"
+             x:DataType="viewmodel:MatchesViewModel"
+             Title="{Binding Title}">
+    
+    <RefreshView Command="{Binding RefreshMatchesCommand}"
+                 IsRefreshing="{Binding IsBusy}">
+        
+        <ScrollView>
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
+                  Padding="20">
+                
+                <!-- Mutual Matches Section -->
+                <Label Grid.Row="0"
+                       Text="Mutual Matches"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       Margin="0,10,0,5" />
+                
+                <CollectionView Grid.Row="1"
+                                ItemsSource="{Binding MutualMatches}"
+                                IsVisible="{Binding HasMutualMatches}"
+                                HeightRequest="120"
+                                SelectionMode="None">
+                    
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"
+                                           ItemSpacing="10" />
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:User">
+                            <Grid RowDefinitions="*,Auto"
+                                  WidthRequest="100">
+                                
+                                <Frame Grid.Row="0"
+                                       CornerRadius="50"
+                                       HeightRequest="80"
+                                       WidthRequest="80"
+                                       Padding="0"
+                                       IsClippedToBounds="True"
+                                       HorizontalOptions="Center">
+                                    
+                                    <Image Source="{Binding ProfileImagePath}"
+                                           Aspect="AspectFill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MatchesViewModel}}, Path=ViewProfileCommand}"
+                                                                  CommandParameter="{Binding .}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                                
+                                <VerticalStackLayout Grid.Row="1"
+                                                     HorizontalOptions="Center">
+                                    
+                                    <Label Text="{Binding Name}"
+                                           FontSize="14"
+                                           HorizontalOptions="Center" />
+                                    
+                                    <Button Text="Chat"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MatchesViewModel}}, Path=StartChatCommand}"
+                                            CommandParameter="{Binding .}"
+                                            FontSize="12"
+                                            HeightRequest="30"
+                                            WidthRequest="60"
+                                            Padding="0" />
+                                </VerticalStackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+                <!-- No mutual matches message -->
+                <Label Grid.Row="1"
+                       Text="No mutual matches yet. Keep swiping!"
+                       IsVisible="{Binding HasMutualMatches, Converter={StaticResource InvertedBoolConverter}}"
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,20" />
+                
+                <!-- Pending Matches Section -->
+                <Label Grid.Row="2"
+                       Text="People Who Liked You"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       Margin="0,20,0,5" />
+                
+                <CollectionView Grid.Row="3"
+                                ItemsSource="{Binding PendingMatches}"
+                                IsVisible="{Binding HasPendingMatches}">
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:User">
+                            <Grid ColumnDefinitions="Auto,*,Auto"
+                                  Padding="5"
+                                  Margin="0,5">
+                                
+                                <Frame Grid.Column="0"
+                                       CornerRadius="25"
+                                       HeightRequest="50"
+                                       WidthRequest="50"
+                                       Padding="0"
+                                       IsClippedToBounds="True">
+                                    
+                                    <Image Source="{Binding ProfileImagePath}"
+                                           Aspect="AspectFill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MatchesViewModel}}, Path=ViewProfileCommand}"
+                                                                  CommandParameter="{Binding .}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                                
+                                <VerticalStackLayout Grid.Column="1"
+                                                     VerticalOptions="Center"
+                                                     Margin="10,0">
+                                    
+                                    <Label Text="{Binding Name}"
+                                           FontSize="16"
+                                           FontAttributes="Bold" />
+                                    
+                                    <Label Text="{Binding Age, StringFormat='{0} years old'}"
+                                           FontSize="14" />
+                                </VerticalStackLayout>
+                                
+                                <Button Grid.Column="2"
+                                        Text="Like Back"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MatchesViewModel}}, Path=LikeUserCommand}"
+                                        CommandParameter="{Binding .}"
+                                        VerticalOptions="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+                <!-- No pending matches message -->
+                <Label Grid.Row="3"
+                       Text="No one has liked you yet. Keep swiping to get noticed!"
+                       IsVisible="{Binding HasPendingMatches, Converter={StaticResource InvertedBoolConverter}}"
+                       HorizontalOptions="Center"
+                       Margin="0,10,0,20" />
+                
+                <!-- Status message and loading indicator -->
+                <VerticalStackLayout Grid.Row="4"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     IsVisible="{Binding StatusMessage, Converter={StaticResource StringNotNullOrEmptyBoolConverter}}">
+                    
+                    <Label Text="{Binding StatusMessage}"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center" />
+                    
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       IsVisible="{Binding IsBusy}"
+                                       HorizontalOptions="Center"
+                                       Margin="0,20,0,0" />
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

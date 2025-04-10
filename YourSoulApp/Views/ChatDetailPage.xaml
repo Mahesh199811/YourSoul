@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSoulApp.Views.ChatDetailPage"
+             xmlns:viewmodel="clr-namespace:YourSoulApp.ViewModels"
+             xmlns:models="clr-namespace:YourSoulApp.Models"
+             x:DataType="viewmodel:ChatDetailViewModel"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Profile"
+                     Command="{Binding ViewProfileCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="*,Auto"
+          ColumnDefinitions="*">
+
+        <RefreshView Grid.Row="0"
+                     Command="{Binding RefreshChatCommand}"
+                     IsRefreshing="{Binding IsBusy}">
+
+            <CollectionView ItemsSource="{Binding Messages}"
+                            IsVisible="{Binding HasMessages}"
+                            ItemsUpdatingScrollMode="KeepLastItemInView">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Message">
+                        <Grid Padding="10">
+                            <Frame BackgroundColor="{Binding IsFromCurrentUser, Converter={StaticResource BoolToColorConverter}, ConverterParameter='#DCF8C6,#ECECEC'}"
+                                   HorizontalOptions="{Binding IsFromCurrentUser, Converter={StaticResource BoolToStringConverter}, ConverterParameter='End,Start'}"
+                                   Padding="10"
+                                   CornerRadius="10"
+                                   HasShadow="False">
+
+                                <VerticalStackLayout>
+                                    <Label Text="{Binding Content}"
+                                           FontSize="16" />
+
+                                    <Label Text="{Binding SentDate, StringFormat='{0:HH:mm}'}"
+                                           FontSize="12"
+                                           TextColor="Gray"
+                                           HorizontalOptions="End" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+
+        <!-- No messages yet -->
+        <VerticalStackLayout Grid.Row="0"
+                             IsVisible="{Binding HasMessages, Converter={StaticResource InvertedBoolConverter}}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Padding="20">
+
+            <Label Text="{Binding StatusMessage}"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <!-- Message input -->
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,Auto"
+              Padding="10"
+              BackgroundColor="{AppThemeBinding Light=White, Dark=#333333}">
+
+            <Frame Grid.Column="0"
+                   BorderColor="{StaticResource Primary}"
+                   CornerRadius="20"
+                   Padding="15,0"
+                   HasShadow="False">
+
+                <Entry Text="{Binding NewMessage}"
+                       Placeholder="Type a message..."
+                       VerticalOptions="Center"
+                       ReturnType="Send"
+                       ReturnCommand="{Binding SendMessageCommand}" />
+            </Frame>
+
+            <Button Grid.Column="1"
+                    Text="Send"
+                    Command="{Binding SendMessageCommand}"
+                    CornerRadius="20"
+                    Margin="5,0,0,0" />
+        </Grid>
+    </Grid>
+</ContentPage>

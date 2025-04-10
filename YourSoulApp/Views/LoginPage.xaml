@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="YourSoulApp.Views.LoginPage"
+             xmlns:viewmodel="clr-namespace:YourSoulApp.ViewModels"
+             x:DataType="viewmodel:LoginViewModel"
+             Title="{Binding Title}">
+    
+    <Grid RowDefinitions="Auto,*,Auto"
+          RowSpacing="20"
+          Padding="20">
+        
+        <Image Grid.Row="0"
+               Source="heart_logo.png"
+               HeightRequest="120"
+               HorizontalOptions="Center"
+               Margin="0,40,0,0" />
+        
+        <VerticalStackLayout Grid.Row="1"
+                             Spacing="20"
+                             VerticalOptions="Center">
+            
+            <Label Text="YourSoul"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="{StaticResource Primary}" />
+            
+            <Label Text="Find your soulmate"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20" />
+            
+            <Entry Placeholder="Username"
+                   Text="{Binding Username}"
+                   Keyboard="Text"
+                   ReturnType="Next" />
+            
+            <Entry Placeholder="Password"
+                   Text="{Binding Password}"
+                   IsPassword="True"
+                   ReturnType="Done" />
+            
+            <Label Text="{Binding ErrorMessage}"
+                   TextColor="Red"
+                   IsVisible="{Binding ErrorMessage, Converter={StaticResource StringNotNullOrEmptyBoolConverter}}" />
+            
+            <Button Text="Login"
+                    Command="{Binding LoginCommand}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"
+                    HorizontalOptions="Fill" />
+            
+            <ActivityIndicator IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}"
+                               HorizontalOptions="Center" />
+        </VerticalStackLayout>
+        
+        <Button Grid.Row="2"
+                Text="Don't have an account? Register"
+                Command="{Binding GoToRegisterCommand}"
+                BackgroundColor="Transparent"
+                TextColor="{StaticResource Primary}"
+                FontSize="14"
+                HorizontalOptions="Center" />
+    </Grid>
+</ContentPage>
