@@ -527,3 +527,4 @@
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/YourSoulApp.pdb
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/YourSoulApp.genruntimeconfig.cache
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/ref/YourSoulApp.dll
+/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/YourSoulApp.sourcelink.json

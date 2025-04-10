@@ -55,10 +55,6 @@
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/SQLitePCLRaw.batteries_v2.dll
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/SQLitePCLRaw.core.dll
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/SQLitePCLRaw.provider.sqlite3.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/Microsoft.Maui.Controls.HotReload.Forms.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/Microsoft.VisualStudio.DesignTools.TapContract.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/YourSoulApp.dll
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/Microsoft.CSharp.dll
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../YourSoulApp.app/Microsoft.VisualBasic.Core.dll

@@ -353,11 +353,4 @@
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/YourSoulApp.pdb
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/YourSoulApp.genruntimeconfig.cache
 /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/ref/YourSoulApp.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/Microsoft.Maui.Controls.HotReload.Forms.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/Microsoft.VisualStudio.DesignTools.TapContract.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/Microsoft.VisualStudio.DesignTools.XamlTapContract.dll
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.Maui.Controls.HotReload.Forms.stamp
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.VisualStudio.DesignTools.MobileTapContracts.stamp
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.VisualStudio.DesignTools.TapContract.stamp
-/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/resourcestamps/Microsoft.VisualStudio.DesignTools.XamlTapContract.stamp
+/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/YourSoulApp.sourcelink.json
