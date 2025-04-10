@@ -11,35 +11,35 @@ namespace YourSoulApp.Services
     public class DatabaseService
     {
         private SQLiteAsyncConnection _database;
-        
+
         public DatabaseService()
         {
             Init();
         }
-        
+
         private async void Init()
         {
             if (_database != null)
                 return;
-                
+
             string dbPath = Path.Combine(FileSystem.AppDataDirectory, "yoursoul.db");
             _database = new SQLiteAsyncConnection(dbPath);
-            
+
             await _database.CreateTableAsync<User>();
             await _database.CreateTableAsync<Match>();
             await _database.CreateTableAsync<Message>();
-            
+
             // Add sample data if database is empty
             await SeedDatabaseAsync();
         }
-        
+
         private async Task SeedDatabaseAsync()
         {
             // Check if we already have users
             var userCount = await _database.Table<User>().CountAsync();
             if (userCount > 0)
                 return;
-                
+
             // Add sample users
             var users = new List<User>
             {
@@ -119,12 +119,12 @@ namespace YourSoulApp.Services
                     MaxDistance = 30
                 }
             };
-            
+
             foreach (var user in users)
             {
                 await _database.InsertAsync(user);
             }
-            
+
             // Create some sample matches
             var matches = new List<Match>
             {
@@ -156,12 +156,12 @@ namespace YourSoulApp.Services
                     User2LikesUser1 = false
                 }
             };
-            
+
             foreach (var match in matches)
             {
                 await _database.InsertAsync(match);
             }
-            
+
             // Add some sample messages
             var messages = new List<Message>
             {
@@ -214,24 +214,24 @@ namespace YourSoulApp.Services
                     IsRead = false
                 }
             };
-            
+
             foreach (var message in messages)
             {
                 await _database.InsertAsync(message);
             }
         }
-        
+
         // User methods
         public async Task<User> GetUserAsync(int id)
         {
             return await _database.Table<User>().Where(u => u.Id == id).FirstOrDefaultAsync();
         }
-        
+
         public async Task<User> GetUserByUsernameAsync(string username)
         {
             return await _database.Table<User>().Where(u => u.Username == username).FirstOrDefaultAsync();
         }
-        
+
         public async Task<int> SaveUserAsync(User user)
         {
             if (user.Id != 0)
@@ -239,32 +239,53 @@ namespace YourSoulApp.Services
             else
                 return await _database.InsertAsync(user);
         }
-        
+
         public async Task<List<User>> GetPotentialMatchesAsync(User currentUser)
         {
             // Get users based on gender preference
             var query = _database.Table<User>().Where(u => u.Id != currentUser.Id);
-            
+
             if (currentUser.InterestedIn != "Both")
             {
                 query = query.Where(u => u.Gender == currentUser.InterestedIn);
             }
-            
+
             // Filter by age preference
             query = query.Where(u => u.Age >= currentUser.MinAgePreference && u.Age <= currentUser.MaxAgePreference);
-            
+
             // Get all potential matches
             var potentialMatches = await query.ToListAsync();
-            
+
             // Get existing matches to filter out
             var existingMatches = await GetUserMatchesAsync(currentUser.Id);
-            var matchedUserIds = existingMatches.Select(m => 
+            var matchedUserIds = existingMatches.Select(m =>
                 m.User1Id == currentUser.Id ? m.User2Id : m.User1Id).ToList();
-            
+
             // Filter out users that are already matched
-            return potentialMatches.Where(u => !matchedUserIds.Contains(u.Id)).ToList();
+            var filteredMatches = potentialMatches.Where(u => !matchedUserIds.Contains(u.Id)).ToList();
+
+            // Further filter matches to only include users whose preferences match the current user
+            var mutualPreferenceMatches = new List<User>();
+
+            foreach (var potentialMatch in filteredMatches)
+            {
+                // Check if current user's gender matches potential match's interest
+                bool genderMatches = potentialMatch.InterestedIn == "Both" || potentialMatch.InterestedIn == currentUser.Gender;
+
+                // Check if current user's age is within potential match's age preference
+                bool ageMatches = currentUser.Age >= potentialMatch.MinAgePreference &&
+                                  currentUser.Age <= potentialMatch.MaxAgePreference;
+
+                // Only include users where both gender and age preferences match
+                if (genderMatches && ageMatches)
+                {
+                    mutualPreferenceMatches.Add(potentialMatch);
+                }
+            }
+
+            return mutualPreferenceMatches;
         }
-        
+
         // Match methods
         public async Task<List<Match>> GetUserMatchesAsync(int userId)
         {
@@ -272,22 +293,22 @@ namespace YourSoulApp.Services
                 .Where(m => (m.User1Id == userId || m.User2Id == userId))
                 .ToListAsync();
         }
-        
+
         public async Task<List<Match>> GetUserMutualMatchesAsync(int userId)
         {
             return await _database.Table<Match>()
                 .Where(m => (m.User1Id == userId || m.User2Id == userId) && m.IsMutualMatch)
                 .ToListAsync();
         }
-        
+
         public async Task<Match> GetMatchAsync(int user1Id, int user2Id)
         {
             return await _database.Table<Match>()
-                .Where(m => (m.User1Id == user1Id && m.User2Id == user2Id) || 
+                .Where(m => (m.User1Id == user1Id && m.User2Id == user2Id) ||
                            (m.User1Id == user2Id && m.User2Id == user1Id))
                 .FirstOrDefaultAsync();
         }
-        
+
         public async Task<int> SaveMatchAsync(Match match)
         {
             if (match.Id != 0)
@@ -295,12 +316,12 @@ namespace YourSoulApp.Services
             else
                 return await _database.InsertAsync(match);
         }
-        
+
         public async Task<bool> LikeUserAsync(int currentUserId, int likedUserId)
         {
             var existingMatch = await GetMatchAsync(currentUserId, likedUserId);
             bool isNewMutualMatch = false;
-            
+
             if (existingMatch == null)
             {
                 // Create new match
@@ -313,7 +334,7 @@ namespace YourSoulApp.Services
                     User1LikesUser2 = true,
                     User2LikesUser1 = false
                 };
-                
+
                 await SaveMatchAsync(newMatch);
             }
             else
@@ -337,23 +358,23 @@ namespace YourSoulApp.Services
                         isNewMutualMatch = true;
                     }
                 }
-                
+
                 await SaveMatchAsync(existingMatch);
             }
-            
+
             return isNewMutualMatch;
         }
-        
+
         // Message methods
         public async Task<List<Message>> GetMessagesAsync(int user1Id, int user2Id)
         {
             return await _database.Table<Message>()
-                .Where(m => (m.SenderId == user1Id && m.ReceiverId == user2Id) || 
+                .Where(m => (m.SenderId == user1Id && m.ReceiverId == user2Id) ||
                            (m.SenderId == user2Id && m.ReceiverId == user1Id))
                 .OrderBy(m => m.SentDate)
                 .ToListAsync();
         }
-        
+
         public async Task<int> SaveMessageAsync(Message message)
         {
             if (message.Id != 0)
@@ -361,20 +382,20 @@ namespace YourSoulApp.Services
             else
                 return await _database.InsertAsync(message);
         }
-        
+
         public async Task<List<ChatConversation>> GetUserConversationsAsync(int userId)
         {
             var conversations = new List<ChatConversation>();
             var matches = await GetUserMutualMatchesAsync(userId);
-            
+
             foreach (var match in matches)
             {
                 int otherUserId = match.User1Id == userId ? match.User2Id : match.User1Id;
                 var otherUser = await GetUserAsync(otherUserId);
-                
+
                 var messages = await GetMessagesAsync(userId, otherUserId);
                 var lastMessage = messages.OrderByDescending(m => m.SentDate).FirstOrDefault();
-                
+
                 var conversation = new ChatConversation
                 {
                     MatchId = match.Id,
@@ -384,19 +405,19 @@ namespace YourSoulApp.Services
                     LastMessageText = lastMessage?.Content ?? "You matched with " + otherUser.Name,
                     UnreadCount = messages.Count(m => m.ReceiverId == userId && !m.IsRead)
                 };
-                
+
                 conversations.Add(conversation);
             }
-            
+
             return conversations.OrderByDescending(c => c.LastMessageDate).ToList();
         }
-        
+
         public async Task MarkMessagesAsReadAsync(int senderId, int receiverId)
         {
             var unreadMessages = await _database.Table<Message>()
                 .Where(m => m.SenderId == senderId && m.ReceiverId == receiverId && !m.IsRead)
                 .ToListAsync();
-                
+
             foreach (var message in unreadMessages)
             {
                 message.IsRead = true;
