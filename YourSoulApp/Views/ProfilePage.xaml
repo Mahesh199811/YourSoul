@@ -107,8 +107,8 @@
                            FontAttributes="Bold"
                            Margin="0,10,0,0" />
 
-                    <Grid ColumnDefinitions="*,*"
-                          RowDefinitions="Auto,Auto"
+                    <Grid ColumnDefinitions="*,Auto"
+                          RowDefinitions="Auto,Auto,Auto,Auto"
                           IsEnabled="{Binding IsEditing}">
 
                         <Label Grid.Row="0"
@@ -116,36 +116,44 @@
                                Text="Min Age:"
                                VerticalOptions="Center" />
 
-                        <HorizontalStackLayout Grid.Row="0"
-                                               Grid.Column="1"
-                                               Spacing="10">
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="{Binding CurrentUser.MinAgePreference}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               FontAttributes="Bold" />
 
-                            <Stepper Value="{Binding CurrentUser.MinAgePreference}"
-                                     Minimum="18"
-                                     Maximum="100"
-                                     Increment="1" />
+                        <Slider Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Minimum="18"
+                                Maximum="100"
+                                Value="{Binding CurrentUser.MinAgePreference}"
+                                MinimumTrackColor="{StaticResource Primary}"
+                                MaximumTrackColor="{StaticResource Gray300}" />
 
-                            <Label Text="{Binding CurrentUser.MinAgePreference}"
-                                   VerticalOptions="Center" />
-                        </HorizontalStackLayout>
-
-                        <Label Grid.Row="1"
+                        <Label Grid.Row="2"
                                Grid.Column="0"
                                Text="Max Age:"
-                               VerticalOptions="Center" />
+                               VerticalOptions="Center"
+                               Margin="0,15,0,0" />
 
-                        <HorizontalStackLayout Grid.Row="1"
-                                               Grid.Column="1"
-                                               Spacing="10">
+                        <Label Grid.Row="2"
+                               Grid.Column="1"
+                               Text="{Binding CurrentUser.MaxAgePreference}"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               FontAttributes="Bold"
+                               Margin="0,15,0,0" />
 
-                            <Stepper Value="{Binding CurrentUser.MaxAgePreference}"
-                                     Minimum="{Binding CurrentUser.MinAgePreference}"
-                                     Maximum="100"
-                                     Increment="1" />
-
-                            <Label Text="{Binding CurrentUser.MaxAgePreference}"
-                                   VerticalOptions="Center" />
-                        </HorizontalStackLayout>
+                        <Slider Grid.Row="3"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Minimum="{Binding CurrentUser.MinAgePreference}"
+                                Maximum="100"
+                                Value="{Binding CurrentUser.MaxAgePreference}"
+                                MinimumTrackColor="{StaticResource Primary}"
+                                MaximumTrackColor="{StaticResource Gray300}" />
                     </Grid>
 
                     <Label Text="Location"

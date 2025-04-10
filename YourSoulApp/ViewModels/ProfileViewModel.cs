@@ -12,8 +12,13 @@ namespace YourSoulApp.ViewModels
         private readonly DatabaseService _databaseService;
         private readonly AuthService _authService;
 
-        [ObservableProperty]
         private User _currentUser;
+
+        public User CurrentUser
+        {
+            get => _currentUser;
+            set => SetProperty(ref _currentUser, value);
+        }
 
         [ObservableProperty]
         private string _statusMessage;
