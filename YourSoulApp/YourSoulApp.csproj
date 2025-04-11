@@ -69,13 +69,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
-		<PackageReference Include="Plugin.LocalNotification" Version="11.1.4" />
-		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
-		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
+		<PackageReference Include="CommunityToolkit.Mvvm" />
+		<PackageReference Include="Microsoft.Maui.Controls" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" />
+		<PackageReference Include="Plugin.LocalNotification" />
+		<PackageReference Include="sqlite-net-pcl" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" />
+	</ItemGroup>
+
+	<!-- Package overrides to resolve conflicts -->
+	<ItemGroup Condition="$(TargetFramework.StartsWith('net8.0-android'))">
+		<PackageReference Include="Xamarin.AndroidX.Collection" />
+		<PackageReference Include="Xamarin.AndroidX.Collection.Jvm" />
+		<PackageReference Include="Xamarin.AndroidX.Collection.Ktx" PrivateAssets="All" />
+		<PackageReference Include="Xamarin.AndroidX.Activity" />
+		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" PrivateAssets="All" />
 	</ItemGroup>
 
 </Project>
