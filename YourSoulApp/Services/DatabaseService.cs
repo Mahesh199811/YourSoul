@@ -4,49 +4,95 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using YourSoulApp.Helpers;
 using YourSoulApp.Models;
 
 namespace YourSoulApp.Services
 {
     public class DatabaseService
     {
-        private SQLiteAsyncConnection _database;
+        private SQLiteAsyncConnection? _database;
+
+        private bool _isInitialized = false;
+        private readonly TaskCompletionSource<bool> _initializationCompletionSource;
 
         public DatabaseService()
         {
-            Init();
+            _initializationCompletionSource = new TaskCompletionSource<bool>();
+            InitAsync();
         }
 
-        private async void Init()
+        public Task WaitForInitializationAsync()
         {
-            if (_database != null)
-                return;
+            if (_isInitialized)
+                return Task.CompletedTask;
 
-            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "yoursoul.db");
-            _database = new SQLiteAsyncConnection(dbPath);
+            return _initializationCompletionSource.Task;
+        }
 
-            await _database.CreateTableAsync<User>();
-            await _database.CreateTableAsync<Match>();
-            await _database.CreateTableAsync<Message>();
+        private async void InitAsync()
+        {
+            try
+            {
+                if (_database != null)
+                {
+                    _isInitialized = true;
+                    _initializationCompletionSource.SetResult(true);
+                    return;
+                }
 
-            // Add sample data if database is empty
-            await SeedDatabaseAsync();
+                try
+                {
+                    // Ensure the directory exists
+                    string dbFolder = FileSystem.AppDataDirectory;
+                    Directory.CreateDirectory(dbFolder);
+
+                    string dbPath = Path.Combine(dbFolder, "yoursoul.db");
+                    System.Diagnostics.Debug.WriteLine($"Database path: {dbPath}");
+
+                    // Create a SQLite connection directly with the path
+                    _database = new SQLiteAsyncConnection(dbPath);
+
+                    await _database.CreateTableAsync<User>();
+                    await _database.CreateTableAsync<Match>();
+                    await _database.CreateTableAsync<Message>();
+
+                    // Add sample data if database is empty
+                    await SeedDatabaseAsync();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Database initialization error: {ex}");
+                    throw; // Re-throw to be caught by the outer try-catch
+                }
+
+                _isInitialized = true;
+                _initializationCompletionSource.SetResult(true);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Database initialization failed: {ex}");
+                _initializationCompletionSource.SetException(ex);
+            }
         }
 
         private async Task SeedDatabaseAsync()
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             // Check if we already have users
             var userCount = await _database.Table<User>().CountAsync();
             if (userCount > 0)
                 return;
 
-            // Add sample users
+            // Add sample users with hashed passwords
             var users = new List<User>
             {
                 new User
                 {
                     Username = "john",
-                    Password = "password", // In a real app, this should be hashed
+                    Password = PasswordHasher.HashPassword("password"),
                     Name = "John Smith",
                     Age = 28,
                     Gender = "Male",
@@ -61,7 +107,7 @@ namespace YourSoulApp.Services
                 new User
                 {
                     Username = "sarah",
-                    Password = "password",
+                    Password = PasswordHasher.HashPassword("password"),
                     Name = "Sarah Johnson",
                     Age = 26,
                     Gender = "Female",
@@ -76,7 +122,7 @@ namespace YourSoulApp.Services
                 new User
                 {
                     Username = "mike",
-                    Password = "password",
+                    Password = PasswordHasher.HashPassword("password"),
                     Name = "Mike Wilson",
                     Age = 30,
                     Gender = "Male",
@@ -91,7 +137,7 @@ namespace YourSoulApp.Services
                 new User
                 {
                     Username = "emily",
-                    Password = "password",
+                    Password = PasswordHasher.HashPassword("password"),
                     Name = "Emily Davis",
                     Age = 25,
                     Gender = "Female",
@@ -106,7 +152,7 @@ namespace YourSoulApp.Services
                 new User
                 {
                     Username = "alex",
-                    Password = "password",
+                    Password = PasswordHasher.HashPassword("password"),
                     Name = "Alex Brown",
                     Age = 29,
                     Gender = "Male",
@@ -224,16 +270,25 @@ namespace YourSoulApp.Services
         // User methods
         public async Task<User> GetUserAsync(int id)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             return await _database.Table<User>().Where(u => u.Id == id).FirstOrDefaultAsync();
         }
 
         public async Task<User> GetUserByUsernameAsync(string username)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             return await _database.Table<User>().Where(u => u.Username == username).FirstOrDefaultAsync();
         }
 
         public async Task<int> SaveUserAsync(User user)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             if (user.Id != 0)
                 return await _database.UpdateAsync(user);
             else
@@ -242,6 +297,9 @@ namespace YourSoulApp.Services
 
         public async Task<List<User>> GetPotentialMatchesAsync(User currentUser)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             // Get existing matches to filter out (do this first to avoid processing users we've already matched with)
             var existingMatches = await GetUserMatchesAsync(currentUser.Id);
             var matchedUserIds = existingMatches.Select(m =>
@@ -285,13 +343,19 @@ namespace YourSoulApp.Services
         // Match methods
         public async Task<List<Match>> GetUserMatchesAsync(int userId)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             return await _database.Table<Match>()
-                .Where(m => (m.User1Id == userId || m.User2Id == userId))
+                .Where(m => m.User1Id == userId || m.User2Id == userId)
                 .ToListAsync();
         }
 
         public async Task<List<Match>> GetUserMutualMatchesAsync(int userId)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             return await _database.Table<Match>()
                 .Where(m => (m.User1Id == userId || m.User2Id == userId) && m.IsMutualMatch)
                 .ToListAsync();
@@ -299,6 +363,9 @@ namespace YourSoulApp.Services
 
         public async Task<Match> GetMatchAsync(int user1Id, int user2Id)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             return await _database.Table<Match>()
                 .Where(m => (m.User1Id == user1Id && m.User2Id == user2Id) ||
                            (m.User1Id == user2Id && m.User2Id == user1Id))
@@ -307,6 +374,9 @@ namespace YourSoulApp.Services
 
         public async Task<int> SaveMatchAsync(Match match)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             if (match.Id != 0)
                 return await _database.UpdateAsync(match);
             else
@@ -315,6 +385,9 @@ namespace YourSoulApp.Services
 
         public async Task<bool> LikeUserAsync(int currentUserId, int likedUserId)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             var existingMatch = await GetMatchAsync(currentUserId, likedUserId);
             bool isNewMutualMatch = false;
 
@@ -364,6 +437,9 @@ namespace YourSoulApp.Services
         // Message methods
         public async Task<List<Message>> GetMessagesAsync(int user1Id, int user2Id)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             return await _database.Table<Message>()
                 .Where(m => (m.SenderId == user1Id && m.ReceiverId == user2Id) ||
                            (m.SenderId == user2Id && m.ReceiverId == user1Id))
@@ -373,6 +449,9 @@ namespace YourSoulApp.Services
 
         public async Task<int> SaveMessageAsync(Message message)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             if (message.Id != 0)
                 return await _database.UpdateAsync(message);
             else
@@ -381,6 +460,9 @@ namespace YourSoulApp.Services
 
         public async Task<List<ChatConversation>> GetUserConversationsAsync(int userId)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             var conversations = new List<ChatConversation>();
             var matches = await GetUserMutualMatchesAsync(userId);
 
@@ -410,6 +492,9 @@ namespace YourSoulApp.Services
 
         public async Task MarkMessagesAsReadAsync(int senderId, int receiverId)
         {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
             var unreadMessages = await _database.Table<Message>()
                 .Where(m => m.SenderId == senderId && m.ReceiverId == receiverId && !m.IsRead)
                 .ToListAsync();

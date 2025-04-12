@@ -62,7 +62,7 @@ namespace YourSoulApp.ViewModels
             Title = "Profile";
         }
 
-        public async Task LoadProfileAsync()
+        public async Task LoadProfileAsync(bool forceRefresh = false)
         {
             if (!_authService.IsLoggedIn())
                 return;
@@ -72,8 +72,12 @@ namespace YourSoulApp.ViewModels
 
             try
             {
+                // Force a refresh of the current user data from the database
                 await _authService.UpdateCurrentUserAsync();
+
+                // Get the updated user data
                 CurrentUser = AuthService.CurrentUser;
+                System.Diagnostics.Debug.WriteLine($"Profile loaded: {CurrentUser?.Name}, Age: {CurrentUser?.Age}");
 
                 if (CurrentUser != null)
                 {
@@ -94,6 +98,7 @@ namespace YourSoulApp.ViewModels
                 else
                 {
                     StatusMessage = "User not found.";
+                    System.Diagnostics.Debug.WriteLine("Warning: CurrentUser is null after loading profile");
                 }
             }
             catch (Exception ex)
@@ -161,8 +166,8 @@ namespace YourSoulApp.ViewModels
         private async Task RefreshProfileAsync()
         {
             // Force a complete reload of the profile data
-            await _authService.UpdateCurrentUserAsync();
-            await LoadProfileAsync();
+            System.Diagnostics.Debug.WriteLine("Manually refreshing profile data");
+            await LoadProfileAsync(true);
         }
 
         [RelayCommand]

@@ -24,7 +24,7 @@
 		<ApplicationTitle>YourSoulApp</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.yoursoulapp</ApplicationId>
+		<ApplicationId>com.yoursoul.app</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
