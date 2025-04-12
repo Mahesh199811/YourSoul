@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/YourSoulApp.csproj": {}
+    "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/YourSoulApp.csproj": {}
   },
   "projects": {
-    "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/YourSoulApp.csproj": {
+    "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/YourSoulApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/YourSoulApp.csproj",
+        "projectUniqueName": "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/YourSoulApp.csproj",
         "projectName": "YourSoulApp",
-        "projectPath": "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/YourSoulApp.csproj",
+        "projectPath": "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/YourSoulApp.csproj",
         "packagesPath": "/Users/maheshgadhave/.nuget/packages/",
-        "outputPath": "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/",
+        "outputPath": "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
+        "centralPackageVersionsManagementEnabled": true,
+        "CentralPackageTransitivePinningEnabled": true,
         "configFilePaths": [
+          "/Users/maheshgadhave/Documents/YourSoul/NuGet.Config",
           "/Users/maheshgadhave/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -57,19 +60,28 @@
           "dependencies": {
             "CommunityToolkit.Mvvm": {
               "target": "Package",
-              "version": "[8.4.0, )"
+              "version": "[8.4.0, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.1, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.100, )"
+              "version": "[8.0.100, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.100, )"
+              "version": "[8.0.100, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[9.0.60, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -79,16 +91,61 @@
             },
             "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[11.1.4, )"
+              "version": "[11.1.4, )",
+              "versionCentrallyManaged": true
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
-              "version": "[2.1.11, )"
+              "version": "[2.1.11, )",
+              "versionCentrallyManaged": true
+            },
+            "Xamarin.AndroidX.Activity": {
+              "target": "Package",
+              "version": "[1.9.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "Xamarin.AndroidX.Activity.Ktx": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.9.0.3, )",
+              "versionCentrallyManaged": true
+            },
+            "Xamarin.AndroidX.Collection": {
+              "target": "Package",
+              "version": "[1.4.0.5, )",
+              "versionCentrallyManaged": true
+            },
+            "Xamarin.AndroidX.Collection.Jvm": {
+              "target": "Package",
+              "version": "[1.4.0.4, )",
+              "versionCentrallyManaged": true
+            },
+            "Xamarin.AndroidX.Collection.Ktx": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.4.0.4, )",
+              "versionCentrallyManaged": true
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.9.172, )"
+              "version": "[1.9.172, )",
+              "versionCentrallyManaged": true
             }
+          },
+          "centralPackageVersions": {
+            "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.Extensions.Logging.Debug": "8.0.1",
+            "Microsoft.Maui.Controls": "8.0.100",
+            "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+            "Microsoft.Maui.Controls.Maps": "9.0.60",
+            "Plugin.LocalNotification": "11.1.4",
+            "sqlite-net-pcl": "1.9.172",
+            "SQLitePCLRaw.bundle_green": "2.1.11",
+            "Xamarin.AndroidX.Activity": "1.9.0.3",
+            "Xamarin.AndroidX.Activity.Ktx": "1.9.0.3",
+            "Xamarin.AndroidX.Collection": "1.4.0.5",
+            "Xamarin.AndroidX.Collection.Jvm": "1.4.0.4",
+            "Xamarin.AndroidX.Collection.Ktx": "1.4.0.4"
           },
           "imports": [
             "net461",
@@ -116,19 +173,28 @@
           "dependencies": {
             "CommunityToolkit.Mvvm": {
               "target": "Package",
-              "version": "[8.4.0, )"
+              "version": "[8.4.0, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.1, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.100, )"
+              "version": "[8.0.100, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.100, )"
+              "version": "[8.0.100, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[9.0.60, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -138,16 +204,34 @@
             },
             "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[11.1.4, )"
+              "version": "[11.1.4, )",
+              "versionCentrallyManaged": true
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
-              "version": "[2.1.11, )"
+              "version": "[2.1.11, )",
+              "versionCentrallyManaged": true
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.9.172, )"
+              "version": "[1.9.172, )",
+              "versionCentrallyManaged": true
             }
+          },
+          "centralPackageVersions": {
+            "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.Extensions.Logging.Debug": "8.0.1",
+            "Microsoft.Maui.Controls": "8.0.100",
+            "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+            "Microsoft.Maui.Controls.Maps": "9.0.60",
+            "Plugin.LocalNotification": "11.1.4",
+            "sqlite-net-pcl": "1.9.172",
+            "SQLitePCLRaw.bundle_green": "2.1.11",
+            "Xamarin.AndroidX.Activity": "1.9.0.3",
+            "Xamarin.AndroidX.Activity.Ktx": "1.9.0.3",
+            "Xamarin.AndroidX.Collection": "1.4.0.5",
+            "Xamarin.AndroidX.Collection.Jvm": "1.4.0.4",
+            "Xamarin.AndroidX.Collection.Ktx": "1.4.0.4"
           },
           "imports": [
             "net461",
@@ -175,19 +259,28 @@
           "dependencies": {
             "CommunityToolkit.Mvvm": {
               "target": "Package",
-              "version": "[8.4.0, )"
+              "version": "[8.4.0, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[8.0.1, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.100, )"
+              "version": "[8.0.100, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.100, )"
+              "version": "[8.0.100, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[9.0.60, )",
+              "versionCentrallyManaged": true
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -197,16 +290,34 @@
             },
             "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[11.1.4, )"
+              "version": "[11.1.4, )",
+              "versionCentrallyManaged": true
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
-              "version": "[2.1.11, )"
+              "version": "[2.1.11, )",
+              "versionCentrallyManaged": true
             },
             "sqlite-net-pcl": {
               "target": "Package",
-              "version": "[1.9.172, )"
+              "version": "[1.9.172, )",
+              "versionCentrallyManaged": true
             }
+          },
+          "centralPackageVersions": {
+            "CommunityToolkit.Mvvm": "8.4.0",
+            "Microsoft.Extensions.Logging.Debug": "8.0.1",
+            "Microsoft.Maui.Controls": "8.0.100",
+            "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+            "Microsoft.Maui.Controls.Maps": "9.0.60",
+            "Plugin.LocalNotification": "11.1.4",
+            "sqlite-net-pcl": "1.9.172",
+            "SQLitePCLRaw.bundle_green": "2.1.11",
+            "Xamarin.AndroidX.Activity": "1.9.0.3",
+            "Xamarin.AndroidX.Activity.Ktx": "1.9.0.3",
+            "Xamarin.AndroidX.Collection": "1.4.0.5",
+            "Xamarin.AndroidX.Collection.Jvm": "1.4.0.4",
+            "Xamarin.AndroidX.Collection.Ktx": "1.4.0.4"
           },
           "imports": [
             "xamarinios10",

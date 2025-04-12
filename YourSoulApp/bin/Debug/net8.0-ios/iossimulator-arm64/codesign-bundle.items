@@ -12,7 +12,7 @@
       <CodesignDisableTimestamp>true</CodesignDisableTimestamp>
       <CodesignKeychain></CodesignKeychain>
       <CodesignUseHardenedRuntime></CodesignUseHardenedRuntime>
-      <SourceProjectPath>/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp</SourceProjectPath>
+      <SourceProjectPath>/Users/maheshgadhave/Documents/YourSoul/YourSoulApp</SourceProjectPath>
     </_CodesignBundle>
   </ItemGroup>
 </Project>

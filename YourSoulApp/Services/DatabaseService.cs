@@ -99,6 +99,8 @@ namespace YourSoulApp.Services
                     Bio = "I love hiking and photography. Looking for someone to share adventures with.",
                     ProfileImagePath = "user_male_1.png",
                     Location = "New York",
+                    Latitude = 40.7128,
+                    Longitude = -74.0060,
                     InterestedIn = "Female",
                     MinAgePreference = 25,
                     MaxAgePreference = 35,
@@ -114,6 +116,8 @@ namespace YourSoulApp.Services
                     Bio = "Coffee enthusiast, book lover, and fitness addict. Let's chat!",
                     ProfileImagePath = "user_female_1.png",
                     Location = "Boston",
+                    Latitude = 42.3601,
+                    Longitude = -71.0589,
                     InterestedIn = "Male",
                     MinAgePreference = 25,
                     MaxAgePreference = 35,
@@ -129,6 +133,8 @@ namespace YourSoulApp.Services
                     Bio = "Software developer by day, musician by night. Looking for someone to share my passion for music.",
                     ProfileImagePath = "user_male_2.png",
                     Location = "San Francisco",
+                    Latitude = 37.7749,
+                    Longitude = -122.4194,
                     InterestedIn = "Female",
                     MinAgePreference = 25,
                     MaxAgePreference = 35,
@@ -144,6 +150,8 @@ namespace YourSoulApp.Services
                     Bio = "Travel addict, foodie, and yoga instructor. Let's explore the world together!",
                     ProfileImagePath = "user_female_2.png",
                     Location = "Chicago",
+                    Latitude = 41.8781,
+                    Longitude = -87.6298,
                     InterestedIn = "Male",
                     MinAgePreference = 25,
                     MaxAgePreference = 35,
@@ -159,6 +167,8 @@ namespace YourSoulApp.Services
                     Bio = "Sports fan, dog lover, and outdoor enthusiast. Looking for someone to share adventures with.",
                     ProfileImagePath = "user_male_3.png",
                     Location = "Los Angeles",
+                    Latitude = 34.0522,
+                    Longitude = -118.2437,
                     InterestedIn = "Female",
                     MinAgePreference = 25,
                     MaxAgePreference = 35,
@@ -504,6 +514,14 @@ namespace YourSoulApp.Services
                 message.IsRead = true;
                 await SaveMessageAsync(message);
             }
+        }
+
+        public async Task<List<User>> GetAllUsersAsync()
+        {
+            if (_database == null)
+                throw new InvalidOperationException("Database is not initialized");
+
+            return await _database.Table<User>().ToListAsync();
         }
     }
 }

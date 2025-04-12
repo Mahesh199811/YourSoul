@@ -3,21 +3,19 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
-
   <PropertyGroup>
     <MauiVersion>8.0.100</MauiVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <!-- Direct dependencies -->
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
     <PackageVersion Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
     <PackageVersion Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+    <PackageVersion Include="Microsoft.Maui.Controls.Maps" Version="9.0.60" />
     <PackageVersion Include="Plugin.LocalNotification" Version="11.1.4" />
     <PackageVersion Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageVersion Include="SQLitePCLRaw.bundle_green" Version="2.1.11" />
-
     <!-- Transitive dependencies with version conflicts -->
     <PackageVersion Include="Xamarin.AndroidX.Collection" Version="1.4.0.5" />
     <PackageVersion Include="Xamarin.AndroidX.Collection.Jvm" Version="1.4.0.4" />

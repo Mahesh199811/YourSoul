@@ -8,9 +8,9 @@
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>true</NoSymbolStrip>
       <dSYMInfoPlistRelativePath>YourSoulApp.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
+      <SymbolFile>/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
       <DSymName>YourSoulApp.app.dSYM</DSymName>
-      <SourceProjectPath>/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp</SourceProjectPath>
+      <SourceProjectPath>/Users/maheshgadhave/Documents/YourSoul/YourSoulApp</SourceProjectPath>
       <IsXPCService></IsXPCService>
     </_PostProcessingItem>
   </ItemGroup>

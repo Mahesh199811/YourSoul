@@ -36,5 +36,16 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to show nearby users on the map.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location to show nearby users on the map.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need your location to find matches near you</string>
+	<key>MKDirectionsApplicationSupportedModes</key>
+	<array>
+		<string>MKDirectionsModePedestrian</string>
+		<string>MKDirectionsModeAutomobile</string>
+	</array>
 </dict>
 </plist>

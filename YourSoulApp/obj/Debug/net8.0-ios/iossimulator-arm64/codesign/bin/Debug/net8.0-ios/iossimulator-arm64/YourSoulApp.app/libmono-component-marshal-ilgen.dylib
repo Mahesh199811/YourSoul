@@ -1,1 +1,1 @@
--v --force --timestamp=none --sign - /Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/YourSoulApp.app/libmono-component-marshal-ilgen.dylib
+-v --force --timestamp=none --sign - /Users/maheshgadhave/Documents/YourSoul/YourSoulApp/bin/Debug/net8.0-ios/iossimulator-arm64/YourSoulApp.app/libmono-component-marshal-ilgen.dylib

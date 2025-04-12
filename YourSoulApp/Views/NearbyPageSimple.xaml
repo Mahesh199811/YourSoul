@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:YourSoulApp.ViewModels"
+             xmlns:models="clr-namespace:YourSoulApp.Models"
+             x:Class="YourSoulApp.Views.NearbyPageSimple"
+             x:DataType="viewmodel:NearbyViewModel"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Search radius controls -->
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Padding="15">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Search Radius (km)" FontSize="16" FontAttributes="Bold" />
+                <Slider Value="{Binding SearchRadius}" Minimum="1" Maximum="100" />
+                <Label Text="{Binding SearchRadius, StringFormat='{0:F0} km'}" HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <Button Grid.Column="1"
+                    Text="Search"
+                    Command="{Binding UpdateSearchRadiusCommand}"
+                    VerticalOptions="Center"
+                    BackgroundColor="#4285F4"
+                    TextColor="White" />
+        </Grid>
+
+        <!-- User list -->
+        <Grid Grid.Row="1" RowDefinitions="Auto,*">
+            <Label Grid.Row="0"
+                   Text="{Binding StatusMessage}"
+                   Padding="10"
+                   HorizontalOptions="Center"
+                   FontAttributes="{Binding StatusMessageFontAttributes}"
+                   TextColor="{Binding StatusMessageColor}" />
+
+            <CollectionView Grid.Row="1"
+                            ItemsSource="{Binding NearbyUsers}"
+                            SelectionMode="None"
+                            EmptyView="No users found nearby. Try increasing your search radius.">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:User">
+                        <Border Margin="5"
+                                Stroke="#DDDDDD"
+                                StrokeThickness="1"
+                                StrokeShape="RoundRectangle 10,10,10,10"
+                                BackgroundColor="#FFFFFF">
+                            <Grid Padding="10" RowDefinitions="Auto,Auto">
+                                <!-- User card -->
+                                <Grid Grid.Row="0" ColumnDefinitions="Auto,*">
+                                    <!-- Profile image -->
+                                    <Border Grid.Column="0"
+                                           StrokeShape="RoundRectangle 25,25,25,25"
+                                           HeightRequest="50"
+                                           WidthRequest="50"
+                                           Stroke="#DDDDDD"
+                                           StrokeThickness="1">
+                                        <Image Source="{Binding ProfileImagePath}"
+                                               Aspect="AspectFill">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NearbyViewModel}}, Path=SelectUserCommand}"
+                                                                      CommandParameter="{Binding .}" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </Border>
+
+                                    <!-- User info -->
+                                    <VerticalStackLayout Grid.Column="1" Margin="10,0,0,0">
+                                        <HorizontalStackLayout>
+                                            <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" />
+                                            <Label Text="{Binding Age, StringFormat=', {0}'}" FontSize="16" />
+                                        </HorizontalStackLayout>
+                                        <Label Text="{Binding Location}" FontSize="14" TextColor="Gray" />
+                                        <Label Text="{Binding Gender}" FontSize="14" />
+                                        <Label Text="{Binding Distance, StringFormat='{0:F1} km away'}" FontSize="12" TextColor="#4285F4" />
+                                    </VerticalStackLayout>
+                                </Grid>
+
+                                <!-- Action buttons -->
+                                <HorizontalStackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="10" Margin="0,10,0,0">
+                                    <Button Text="View Profile"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NearbyViewModel}}, Path=ViewProfileCommand}"
+                                            CommandParameter="{Binding .}"
+                                            HeightRequest="40"
+                                            WidthRequest="120"
+                                            FontSize="14"
+                                            BackgroundColor="#4285F4"
+                                            TextColor="White" />
+
+                                    <Button Text="Like"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:NearbyViewModel}}, Path=LikeUserCommand}"
+                                            CommandParameter="{Binding .}"
+                                            HeightRequest="40"
+                                            WidthRequest="80"
+                                            FontSize="14"
+                                            BackgroundColor="#55AA55"
+                                            TextColor="White" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <!-- Loading indicator -->
+        <ActivityIndicator Grid.Row="1"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Color="#4285F4" />
+
+        <!-- Refresh button -->
+        <Button Grid.Row="2"
+                Text="Refresh"
+                Command="{Binding LoadNearbyUsersCommand}"
+                HorizontalOptions="Center"
+                Margin="0,10,0,20"
+                BackgroundColor="#4285F4"
+                TextColor="White" />
+    </Grid>
+</ContentPage>

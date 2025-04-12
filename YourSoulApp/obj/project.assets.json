@@ -365,6 +365,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -444,6 +460,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -686,28 +715,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -948,24 +977,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -1511,26 +1539,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -1553,25 +1581,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -1845,24 +1873,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -2793,6 +2821,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -2872,6 +2916,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -3114,28 +3171,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -3376,24 +3433,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -3939,26 +3995,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -3981,25 +4037,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -4273,24 +4329,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -5221,6 +5277,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -5300,6 +5372,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -5542,28 +5627,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -5804,24 +5889,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -6367,26 +6451,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -6409,25 +6493,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -6701,24 +6785,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -7649,6 +7733,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -7728,6 +7828,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -7970,28 +8083,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -8232,24 +8345,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -8795,26 +8907,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -8837,25 +8949,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -9129,24 +9241,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -10077,6 +10189,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -10156,6 +10284,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -10398,28 +10539,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -10660,24 +10801,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -11223,26 +11363,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -11265,25 +11405,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -11557,24 +11697,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -12505,6 +12645,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -12584,6 +12740,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -12826,28 +12995,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -13088,24 +13257,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -13651,26 +13819,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -13693,25 +13861,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -13985,24 +14153,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -14933,6 +15101,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -15012,6 +15196,19 @@
         },
         "runtime": {
           "lib/net8.0-android34.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -15254,28 +15451,28 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.targets": {}
         }
       },
-      "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
+      "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Activity": "1.7.2.1",
-          "Xamarin.AndroidX.Core.Core.Ktx": "1.10.1.2",
-          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.6.1.3",
-          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Activity": "[1.9.0.3, 1.9.1)",
+          "Xamarin.AndroidX.Core.Core.Ktx": "1.13.1.2",
+          "Xamarin.AndroidX.Lifecycle.Runtime.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx": "2.7.0.4",
+          "Xamarin.AndroidX.SavedState.SavedState.Ktx": "1.2.1.10",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Annotation/1.7.1.4": {
@@ -15516,24 +15713,23 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Jvm.targets": {}
         }
       },
-      "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
+      "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Collection": "1.2.0.9",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.Collection.Jvm": "[1.4.0.4, 1.4.1)"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Concurrent.Futures/1.1.0.21": {
@@ -16079,26 +16275,26 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Annotation": "1.6.0.4",
-          "Xamarin.AndroidX.Lifecycle.Runtime": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Annotation": "1.7.1.4",
+          "Xamarin.AndroidX.Lifecycle.Runtime": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModel/2.7.0.4": {
@@ -16121,25 +16317,25 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.targets": {}
         }
       },
-      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
+      "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.Lifecycle.ViewModel": "2.6.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1",
-          "Xamarin.KotlinX.Coroutines.Android": "1.7.2.1"
+          "Xamarin.AndroidX.Lifecycle.ViewModel": "[2.7.0.4, 2.7.1)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Lifecycle.ViewModelSavedState/2.7.0.4": {
@@ -16413,24 +16609,24 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.targets": {}
         }
       },
-      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
+      "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
         "type": "package",
         "dependencies": {
-          "Xamarin.AndroidX.SavedState": "1.2.1.3",
-          "Xamarin.Kotlin.StdLib": "1.9.0.1"
+          "Xamarin.AndroidX.SavedState": "[1.2.1.10, 1.2.2)",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3"
         },
         "compile": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
+          "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "build": {
-          "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
+          "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets": {}
         }
       },
       "Xamarin.AndroidX.Security.SecurityCrypto/1.1.0.1-alpha06": {
@@ -17348,6 +17544,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -17416,6 +17628,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -17868,6 +18093,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -17936,6 +18177,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -18388,6 +18642,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -18456,6 +18726,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -18908,6 +19191,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -18976,6 +19275,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -19428,6 +19740,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -19496,6 +19824,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -19948,6 +20289,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -20016,6 +20373,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -20468,6 +20838,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -20536,6 +20922,19 @@
         },
         "runtime": {
           "lib/net8.0-ios18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -20988,6 +21387,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -21056,6 +21471,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -21606,6 +22034,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -21674,6 +22118,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -22133,6 +22590,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -22201,6 +22674,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -22660,6 +23146,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -22728,6 +23230,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -23187,6 +23702,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -23255,6 +23786,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -23714,6 +24258,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -23782,6 +24342,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -24238,6 +24811,22 @@
           }
         }
       },
+      "Microsoft.Maui.Controls.Maps/9.0.60": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Maui.Maps": "9.0.60"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Maui.Controls.Xaml/8.0.100": {
         "type": "package",
         "dependencies": {
@@ -24306,6 +24895,19 @@
         },
         "runtime": {
           "lib/net8.0-maccatalyst18.0/Microsoft.Maui.Graphics.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Maui.Maps/9.0.60": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Maui.Maps.dll": {
             "related": ".pdb;.xml"
           }
         }
@@ -25411,6 +26013,48 @@
         "microsoft.maui.controls.core.nuspec"
       ]
     },
+    "Microsoft.Maui.Controls.Maps/9.0.60": {
+      "sha512": "VP8djILIdTpcrPh1tYpHZkX1ZU5l2mzrVCqU9SoDjP3ZpBaQVbxLhHjBYOj4fxBYPRAj4lloVdlKpRGJMaf7hA==",
+      "type": "package",
+      "path": "microsoft.maui.controls.maps/9.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net9.0-android35.0/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0-android35.0/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0-android35.0/Microsoft.Maui.Controls.Maps.xml",
+        "lib/net9.0-ios18.0/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0-ios18.0/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0-ios18.0/Microsoft.Maui.Controls.Maps.xml",
+        "lib/net9.0-maccatalyst18.0/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0-maccatalyst18.0/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0-maccatalyst18.0/Microsoft.Maui.Controls.Maps.xml",
+        "lib/net9.0-tizen7.0/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0-tizen7.0/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0-tizen7.0/Microsoft.Maui.Controls.Maps.xml",
+        "lib/net9.0-windows10.0.19041/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0-windows10.0.19041/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0-windows10.0.19041/Microsoft.Maui.Controls.Maps.xml",
+        "lib/net9.0-windows10.0.20348/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0-windows10.0.20348/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0-windows10.0.20348/Microsoft.Maui.Controls.Maps.xml",
+        "lib/net9.0/Microsoft.Maui.Controls.Maps.dll",
+        "lib/net9.0/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/net9.0/Microsoft.Maui.Controls.Maps.xml",
+        "lib/netstandard2.0/Microsoft.Maui.Controls.Maps.dll",
+        "lib/netstandard2.0/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/netstandard2.0/Microsoft.Maui.Controls.Maps.xml",
+        "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.dll",
+        "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.pdb",
+        "lib/netstandard2.1/Microsoft.Maui.Controls.Maps.xml",
+        "microsoft.maui.controls.maps.9.0.60.nupkg.sha512",
+        "microsoft.maui.controls.maps.nuspec"
+      ]
+    },
     "Microsoft.Maui.Controls.Xaml/8.0.100": {
       "sha512": "GBfjikOi5FBkpQKcYQnzYwImcYMKGR0eSFGcE8rThc9VBaPGGoRq9ttMEGuY5QclVs7NtSmaYpf38ShGLbLcqw==",
       "type": "package",
@@ -25685,6 +26329,48 @@
         "lib/netstandard2.1/Microsoft.Maui.Graphics.xml",
         "microsoft.maui.graphics.8.0.100.nupkg.sha512",
         "microsoft.maui.graphics.nuspec"
+      ]
+    },
+    "Microsoft.Maui.Maps/9.0.60": {
+      "sha512": "FwoNTMZOxS8njk1p340I6lP8PTYerL9q9xWUDMCuU6bXyxq6N5PfIzAn8rIrIxAsCe+PgtwcqZ/ed8i7FyGUmg==",
+      "type": "package",
+      "path": "microsoft.maui.maps/9.0.60",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net9.0-android35.0/Microsoft.Maui.Maps.dll",
+        "lib/net9.0-android35.0/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0-android35.0/Microsoft.Maui.Maps.xml",
+        "lib/net9.0-ios18.0/Microsoft.Maui.Maps.dll",
+        "lib/net9.0-ios18.0/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0-ios18.0/Microsoft.Maui.Maps.xml",
+        "lib/net9.0-maccatalyst18.0/Microsoft.Maui.Maps.dll",
+        "lib/net9.0-maccatalyst18.0/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0-maccatalyst18.0/Microsoft.Maui.Maps.xml",
+        "lib/net9.0-tizen7.0/Microsoft.Maui.Maps.dll",
+        "lib/net9.0-tizen7.0/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0-tizen7.0/Microsoft.Maui.Maps.xml",
+        "lib/net9.0-windows10.0.19041/Microsoft.Maui.Maps.dll",
+        "lib/net9.0-windows10.0.19041/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0-windows10.0.19041/Microsoft.Maui.Maps.xml",
+        "lib/net9.0-windows10.0.20348/Microsoft.Maui.Maps.dll",
+        "lib/net9.0-windows10.0.20348/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0-windows10.0.20348/Microsoft.Maui.Maps.xml",
+        "lib/net9.0/Microsoft.Maui.Maps.dll",
+        "lib/net9.0/Microsoft.Maui.Maps.pdb",
+        "lib/net9.0/Microsoft.Maui.Maps.xml",
+        "lib/netstandard2.0/Microsoft.Maui.Maps.dll",
+        "lib/netstandard2.0/Microsoft.Maui.Maps.pdb",
+        "lib/netstandard2.0/Microsoft.Maui.Maps.xml",
+        "lib/netstandard2.1/Microsoft.Maui.Maps.dll",
+        "lib/netstandard2.1/Microsoft.Maui.Maps.pdb",
+        "lib/netstandard2.1/Microsoft.Maui.Maps.xml",
+        "microsoft.maui.maps.9.0.60.nupkg.sha512",
+        "microsoft.maui.maps.nuspec"
       ]
     },
     "Microsoft.Maui.Resizetizer/8.0.100": {
@@ -26153,28 +26839,24 @@
         "xamarin.androidx.activity.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Activity.Ktx/1.7.2.1": {
-      "sha512": "F33m+w8IN4ByAM1/8UqPNJ0yFOUjbaSTucn71g4D7D9skF8C/UDNeuh6wPPBJdYTq2DLmQ0n2jpa2n/gwHkURQ==",
+    "Xamarin.AndroidX.Activity.Ktx/1.9.0.3": {
+      "sha512": "MB2f0eYWj/3JV7T/sxyZRHeektJ/WOyRNy7/kuXQM/MUabGPnG+GZdWdJULEClXyG44AwKgSfqTR0CI47c/JRQ==",
       "type": "package",
-      "path": "xamarin.androidx.activity.ktx/1.7.2.1",
+      "path": "xamarin.androidx.activity.ktx/1.9.0.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
         "aar/androidx.activity.activity-ktx.aar",
-        "build/monoandroid12.0/Xamarin.AndroidX.Activity.Ktx.targets",
-        "build/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets",
-        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Activity.Ktx.targets",
-        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.targets",
+        "build/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.targets",
         "icon.png",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Activity.Ktx.dll",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Activity.Ktx.pdb",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Activity.Ktx.xml",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.dll",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.pdb",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Activity.Ktx.xml",
-        "xamarin.androidx.activity.ktx.1.7.2.1.nupkg.sha512",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.dll",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.pdb",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Activity.Ktx.xml",
+        "readme.md",
+        "xamarin.androidx.activity.ktx.1.9.0.3.nupkg.sha512",
         "xamarin.androidx.activity.ktx.nuspec"
       ]
     },
@@ -26426,28 +27108,24 @@
         "xamarin.androidx.collection.jvm.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Collection.Ktx/1.2.0.9": {
-      "sha512": "IWiTUj8r+GSLW/wqvk9vlHA8vIUEtxp6NcGJwDPuy0rVsAKHtBIFjmAXxxHSgVUf1/NXVSD0WMoK46qiTMNe3Q==",
+    "Xamarin.AndroidX.Collection.Ktx/1.4.0.4": {
+      "sha512": "nGeouRe8GZ85XdrHRwqgvw4OMhHE7ye7VFfSKGqxGF92x+EnpgF10YtC7D3yFmzPng9Xap7t/bWAg3aBrF3jHg==",
       "type": "package",
-      "path": "xamarin.androidx.collection.ktx/1.2.0.9",
+      "path": "xamarin.androidx.collection.ktx/1.4.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
-        "build/monoandroid12.0/Xamarin.AndroidX.Collection.Ktx.targets",
-        "build/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets",
-        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Collection.Ktx.targets",
-        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.targets",
+        "build/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.targets",
         "icon.png",
         "jar/androidx.collection.collection-ktx.jar",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Collection.Ktx.dll",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Collection.Ktx.pdb",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Collection.Ktx.xml",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.dll",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.pdb",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Collection.Ktx.xml",
-        "xamarin.androidx.collection.ktx.1.2.0.9.nupkg.sha512",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.dll",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.pdb",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Collection.Ktx.xml",
+        "readme.md",
+        "xamarin.androidx.collection.ktx.1.4.0.4.nupkg.sha512",
         "xamarin.androidx.collection.ktx.nuspec"
       ]
     },
@@ -27045,28 +27723,24 @@
         "xamarin.androidx.lifecycle.runtime.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.6.1.3": {
-      "sha512": "tbd9GPmJgMk7J5WE2qjwU7jIvfYh9Obg4fv4DFKcRKoOx+OJVueqGBwQRReO7fNSJD/hXR2w8/4ZIQj38Ia3zA==",
+    "Xamarin.AndroidX.Lifecycle.Runtime.Ktx/2.7.0.4": {
+      "sha512": "emQMTlzav8J4K6JOR3fdYaBEy/9yBcDSdQRkaXZeRh7WlYZZgvdUQXqM2AX/UZmAt4LzV8IHYJT7lmFXITHQnQ==",
       "type": "package",
-      "path": "xamarin.androidx.lifecycle.runtime.ktx/2.6.1.3",
+      "path": "xamarin.androidx.lifecycle.runtime.ktx/2.7.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
         "aar/androidx.lifecycle.lifecycle-runtime-ktx.aar",
-        "build/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets",
-        "build/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets",
-        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets",
-        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets",
+        "build/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.targets",
         "icon.png",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.pdb",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.xml",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.pdb",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.xml",
-        "xamarin.androidx.lifecycle.runtime.ktx.2.6.1.3.nupkg.sha512",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.dll",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.pdb",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.Runtime.Ktx.xml",
+        "readme.md",
+        "xamarin.androidx.lifecycle.runtime.ktx.2.7.0.4.nupkg.sha512",
         "xamarin.androidx.lifecycle.runtime.ktx.nuspec"
       ]
     },
@@ -27092,28 +27766,24 @@
         "xamarin.androidx.lifecycle.viewmodel.nuspec"
       ]
     },
-    "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.6.1.3": {
-      "sha512": "Gxu3eXf5oRNUE7uf3dprt8e68rA5LMPJlWGwW2vvhlgmlKXHFxTRQS4qm6Lf1g8QBut8ABsjC13iP7UkIb2xNA==",
+    "Xamarin.AndroidX.Lifecycle.ViewModel.Ktx/2.7.0.4": {
+      "sha512": "43gGYKNfK6Z3grQnLadN/GndWjxDCgp9cllKgyhVZYmpasDOCSrj47MMTNOWc0/8MvPYYEBxsMuYCLVajz3Hzg==",
       "type": "package",
-      "path": "xamarin.androidx.lifecycle.viewmodel.ktx/2.6.1.3",
+      "path": "xamarin.androidx.lifecycle.viewmodel.ktx/2.7.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
         "aar/androidx.lifecycle.lifecycle-viewmodel-ktx.aar",
-        "build/monoandroid12.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets",
-        "build/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets",
-        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets",
-        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets",
+        "build/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.targets",
         "icon.png",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.pdb",
-        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.xml",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.pdb",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.xml",
-        "xamarin.androidx.lifecycle.viewmodel.ktx.2.6.1.3.nupkg.sha512",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.dll",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.pdb",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.Lifecycle.ViewModel.Ktx.xml",
+        "readme.md",
+        "xamarin.androidx.lifecycle.viewmodel.ktx.2.7.0.4.nupkg.sha512",
         "xamarin.androidx.lifecycle.viewmodel.ktx.nuspec"
       ]
     },
@@ -27406,28 +28076,24 @@
         "xamarin.androidx.savedstate.nuspec"
       ]
     },
-    "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.3": {
-      "sha512": "0hd/irkAeOYQz8i9EmYNelfFQBxUips094zvsFX+x10LddxjWgZWV1yR9dGyyXTePm9R3m/QuElZeP7vCsi75w==",
+    "Xamarin.AndroidX.SavedState.SavedState.Ktx/1.2.1.10": {
+      "sha512": "zhMnx4EDKIuzg8DM1/KfxEPMIDbTnG9zPoIeZ1VUtDpBB5FlfGUa4Jbe7qU+vjmbxeWvKJlA4VhsQt0qo2BF4A==",
       "type": "package",
-      "path": "xamarin.androidx.savedstate.savedstate.ktx/1.2.1.3",
+      "path": "xamarin.androidx.savedstate.savedstate.ktx/1.2.1.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
         "aar/androidx.savedstate.savedstate-ktx.aar",
-        "build/monoandroid12.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets",
-        "build/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets",
-        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets",
-        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets",
+        "build/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.targets",
         "icon.png",
-        "lib/monoandroid12.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll",
-        "lib/monoandroid12.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.pdb",
-        "lib/monoandroid12.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.xml",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.pdb",
-        "lib/net6.0-android31.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.xml",
-        "xamarin.androidx.savedstate.savedstate.ktx.1.2.1.3.nupkg.sha512",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.dll",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.pdb",
+        "lib/net8.0-android34.0/Xamarin.AndroidX.SavedState.SavedState.Ktx.xml",
+        "readme.md",
+        "xamarin.androidx.savedstate.savedstate.ktx.1.2.1.10.nupkg.sha512",
         "xamarin.androidx.savedstate.savedstate.ktx.nuspec"
       ]
     },
@@ -28046,9 +28712,15 @@
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
+      "Microsoft.Maui.Controls.Maps >= 9.0.60",
       "Microsoft.NET.ILLink.Tasks >= 8.0.12",
       "Plugin.LocalNotification >= 11.1.4",
       "SQLitePCLRaw.bundle_green >= 2.1.11",
+      "Xamarin.AndroidX.Activity >= 1.9.0.3",
+      "Xamarin.AndroidX.Activity.Ktx >= 1.9.0.3",
+      "Xamarin.AndroidX.Collection >= 1.4.0.5",
+      "Xamarin.AndroidX.Collection.Jvm >= 1.4.0.4",
+      "Xamarin.AndroidX.Collection.Ktx >= 1.4.0.4",
       "sqlite-net-pcl >= 1.9.172"
     ],
     "net8.0-ios18.0": [
@@ -28056,6 +28728,7 @@
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
+      "Microsoft.Maui.Controls.Maps >= 9.0.60",
       "Microsoft.NET.ILLink.Tasks >= 8.0.12",
       "Plugin.LocalNotification >= 11.1.4",
       "SQLitePCLRaw.bundle_green >= 2.1.11",
@@ -28066,6 +28739,7 @@
       "Microsoft.Extensions.Logging.Debug >= 8.0.1",
       "Microsoft.Maui.Controls >= 8.0.100",
       "Microsoft.Maui.Controls.Compatibility >= 8.0.100",
+      "Microsoft.Maui.Controls.Maps >= 9.0.60",
       "Microsoft.NET.ILLink.Tasks >= 8.0.12",
       "Plugin.LocalNotification >= 11.1.4",
       "SQLitePCLRaw.bundle_green >= 2.1.11",
@@ -28078,14 +28752,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/YourSoulApp.csproj",
+      "projectUniqueName": "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/YourSoulApp.csproj",
       "projectName": "YourSoulApp",
-      "projectPath": "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/YourSoulApp.csproj",
+      "projectPath": "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/YourSoulApp.csproj",
       "packagesPath": "/Users/maheshgadhave/.nuget/packages/",
-      "outputPath": "/Users/maheshgadhave/Documents/augment-projects/YourSoul/YourSoulApp/obj/",
+      "outputPath": "/Users/maheshgadhave/Documents/YourSoul/YourSoulApp/obj/",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
+      "centralPackageVersionsManagementEnabled": true,
+      "CentralPackageTransitivePinningEnabled": true,
       "configFilePaths": [
+        "/Users/maheshgadhave/Documents/YourSoul/NuGet.Config",
         "/Users/maheshgadhave/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
@@ -28128,19 +28805,28 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.4.0, )"
+            "version": "[8.4.0, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
-            "version": "[8.0.1, )"
+            "version": "[8.0.1, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Maui.Controls": {
             "target": "Package",
-            "version": "[8.0.100, )"
+            "version": "[8.0.100, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Maui.Controls.Compatibility": {
             "target": "Package",
-            "version": "[8.0.100, )"
+            "version": "[8.0.100, )",
+            "versionCentrallyManaged": true
+          },
+          "Microsoft.Maui.Controls.Maps": {
+            "target": "Package",
+            "version": "[9.0.60, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
@@ -28150,16 +28836,61 @@
           },
           "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[11.1.4, )"
+            "version": "[11.1.4, )",
+            "versionCentrallyManaged": true
           },
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
-            "version": "[2.1.11, )"
+            "version": "[2.1.11, )",
+            "versionCentrallyManaged": true
+          },
+          "Xamarin.AndroidX.Activity": {
+            "target": "Package",
+            "version": "[1.9.0.3, )",
+            "versionCentrallyManaged": true
+          },
+          "Xamarin.AndroidX.Activity.Ktx": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.9.0.3, )",
+            "versionCentrallyManaged": true
+          },
+          "Xamarin.AndroidX.Collection": {
+            "target": "Package",
+            "version": "[1.4.0.5, )",
+            "versionCentrallyManaged": true
+          },
+          "Xamarin.AndroidX.Collection.Jvm": {
+            "target": "Package",
+            "version": "[1.4.0.4, )",
+            "versionCentrallyManaged": true
+          },
+          "Xamarin.AndroidX.Collection.Ktx": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.4.0.4, )",
+            "versionCentrallyManaged": true
           },
           "sqlite-net-pcl": {
             "target": "Package",
-            "version": "[1.9.172, )"
+            "version": "[1.9.172, )",
+            "versionCentrallyManaged": true
           }
+        },
+        "centralPackageVersions": {
+          "CommunityToolkit.Mvvm": "8.4.0",
+          "Microsoft.Extensions.Logging.Debug": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.100",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+          "Microsoft.Maui.Controls.Maps": "9.0.60",
+          "Plugin.LocalNotification": "11.1.4",
+          "sqlite-net-pcl": "1.9.172",
+          "SQLitePCLRaw.bundle_green": "2.1.11",
+          "Xamarin.AndroidX.Activity": "1.9.0.3",
+          "Xamarin.AndroidX.Activity.Ktx": "1.9.0.3",
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Collection.Jvm": "1.4.0.4",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.4"
         },
         "imports": [
           "net461",
@@ -28187,19 +28918,28 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.4.0, )"
+            "version": "[8.4.0, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
-            "version": "[8.0.1, )"
+            "version": "[8.0.1, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Maui.Controls": {
             "target": "Package",
-            "version": "[8.0.100, )"
+            "version": "[8.0.100, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Maui.Controls.Compatibility": {
             "target": "Package",
-            "version": "[8.0.100, )"
+            "version": "[8.0.100, )",
+            "versionCentrallyManaged": true
+          },
+          "Microsoft.Maui.Controls.Maps": {
+            "target": "Package",
+            "version": "[9.0.60, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
@@ -28209,16 +28949,34 @@
           },
           "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[11.1.4, )"
+            "version": "[11.1.4, )",
+            "versionCentrallyManaged": true
           },
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
-            "version": "[2.1.11, )"
+            "version": "[2.1.11, )",
+            "versionCentrallyManaged": true
           },
           "sqlite-net-pcl": {
             "target": "Package",
-            "version": "[1.9.172, )"
+            "version": "[1.9.172, )",
+            "versionCentrallyManaged": true
           }
+        },
+        "centralPackageVersions": {
+          "CommunityToolkit.Mvvm": "8.4.0",
+          "Microsoft.Extensions.Logging.Debug": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.100",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+          "Microsoft.Maui.Controls.Maps": "9.0.60",
+          "Plugin.LocalNotification": "11.1.4",
+          "sqlite-net-pcl": "1.9.172",
+          "SQLitePCLRaw.bundle_green": "2.1.11",
+          "Xamarin.AndroidX.Activity": "1.9.0.3",
+          "Xamarin.AndroidX.Activity.Ktx": "1.9.0.3",
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Collection.Jvm": "1.4.0.4",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.4"
         },
         "imports": [
           "net461",
@@ -28246,19 +29004,28 @@
         "dependencies": {
           "CommunityToolkit.Mvvm": {
             "target": "Package",
-            "version": "[8.4.0, )"
+            "version": "[8.4.0, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
-            "version": "[8.0.1, )"
+            "version": "[8.0.1, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Maui.Controls": {
             "target": "Package",
-            "version": "[8.0.100, )"
+            "version": "[8.0.100, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.Maui.Controls.Compatibility": {
             "target": "Package",
-            "version": "[8.0.100, )"
+            "version": "[8.0.100, )",
+            "versionCentrallyManaged": true
+          },
+          "Microsoft.Maui.Controls.Maps": {
+            "target": "Package",
+            "version": "[9.0.60, )",
+            "versionCentrallyManaged": true
           },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
@@ -28268,16 +29035,34 @@
           },
           "Plugin.LocalNotification": {
             "target": "Package",
-            "version": "[11.1.4, )"
+            "version": "[11.1.4, )",
+            "versionCentrallyManaged": true
           },
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
-            "version": "[2.1.11, )"
+            "version": "[2.1.11, )",
+            "versionCentrallyManaged": true
           },
           "sqlite-net-pcl": {
             "target": "Package",
-            "version": "[1.9.172, )"
+            "version": "[1.9.172, )",
+            "versionCentrallyManaged": true
           }
+        },
+        "centralPackageVersions": {
+          "CommunityToolkit.Mvvm": "8.4.0",
+          "Microsoft.Extensions.Logging.Debug": "8.0.1",
+          "Microsoft.Maui.Controls": "8.0.100",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+          "Microsoft.Maui.Controls.Maps": "9.0.60",
+          "Plugin.LocalNotification": "11.1.4",
+          "sqlite-net-pcl": "1.9.172",
+          "SQLitePCLRaw.bundle_green": "2.1.11",
+          "Xamarin.AndroidX.Activity": "1.9.0.3",
+          "Xamarin.AndroidX.Activity.Ktx": "1.9.0.3",
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Collection.Jvm": "1.4.0.4",
+          "Xamarin.AndroidX.Collection.Ktx": "1.4.0.4"
         },
         "imports": [
           "xamarinios10",

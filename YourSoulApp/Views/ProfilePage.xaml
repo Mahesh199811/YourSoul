@@ -38,8 +38,27 @@
                            Padding="0"
                            IsClippedToBounds="True">
 
-                        <Image Source="{Binding CurrentUser.ProfileImagePath}"
-                               Aspect="AspectFill" />
+                        <Grid>
+                            <Image Source="{Binding CurrentUser.ProfileImagePath}"
+                                   Aspect="AspectFill">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ChangeProfilePictureCommand}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                            <!-- Camera icon overlay when in edit mode -->
+                            <Grid IsVisible="{Binding IsEditing}"
+                                  BackgroundColor="#80000000"
+                                  VerticalOptions="End"
+                                  HeightRequest="30">
+                                <!-- Camera icon -->
+                                <Label Text="Change Photo"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       FontSize="12" />
+                            </Grid>
+                        </Grid>
                     </Frame>
 
                     <VerticalStackLayout Grid.Row="0"

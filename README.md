@@ -8,6 +8,7 @@ A full-fledged dating app built with .NET MAUI and MVVM architecture, designed f
 
 - **Secure User Authentication**: Registration and login with secure password hashing
 - **User Discovery**: Swipe-based interface for discovering potential matches
+- **Nearby Users**: Find users near your location with customizable search radius
 - **Matching System**: Like/dislike functionality with mutual match detection
 - **Real-time Chat**: Messaging between matched users
 - **Comprehensive Profile Management**: View and edit detailed user profiles
@@ -102,6 +103,8 @@ The app comes pre-loaded with sample users for testing:
 
 ## Recent Updates
 
+- **Simplified Nearby Feature**: Replaced map-based nearby user discovery with a more stable list view
+- **Improved Location Services**: Enhanced location permission handling and error recovery
 - **Secure Password Hashing**: Implemented PBKDF2 with HMACSHA256 for secure credential storage
 - **Profile Data Persistence**: Fixed issues with profile data not being displayed correctly after login
 - **App Identifiers**: Updated app identifiers for distribution (com.yoursoul.app)
@@ -112,7 +115,7 @@ The app comes pre-loaded with sample users for testing:
 - Cloud backend integration for multi-device synchronization
 - Push notifications for real-time messaging
 - Enhanced matching algorithm based on user preferences
-- Location-based matching
+- Map view for nearby users (with improved stability)
 - Media sharing in chat
 
 ## Contributing

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YourSoul</string>
+    <!-- For testing purposes, you can use this API key. For production, you should get your own API key -->
+    <string name="google_maps_api_key">AIzaSyBNhpUmwQTKOyQZgvQNq0ZlFXwSLGSNDpA</string>
+</resources>

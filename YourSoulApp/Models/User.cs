@@ -7,7 +7,7 @@ namespace YourSoulApp.Models
 {
     public class User : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
@@ -19,6 +19,8 @@ namespace YourSoulApp.Models
         public string Bio { get; set; } = string.Empty;
         public string ProfileImagePath { get; set; } = string.Empty;
         public string Location { get; set; } = string.Empty;
+        public double Latitude { get; set; } = 0;
+        public double Longitude { get; set; } = 0;
 
         // Dating preferences
         public string InterestedIn { get; set; } = "Both"; // "Male", "Female", "Both"
@@ -66,8 +68,23 @@ namespace YourSoulApp.Models
         [Ignore]
         public bool IsCurrentUser { get; set; }
 
+        private double _distance;
+        [Ignore]
+        public double Distance
+        {
+            get => _distance;
+            set
+            {
+                if (_distance != value)
+                {
+                    _distance = value;
+                    OnPropertyChanged(nameof(Distance));
+                }
+            }
+        }
+
         // Helper method for property change notification
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

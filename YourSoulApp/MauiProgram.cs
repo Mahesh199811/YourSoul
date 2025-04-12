@@ -28,12 +28,14 @@ public static class MauiProgram
 		builder.Services.AddSingleton<DatabaseService>();
 		builder.Services.AddSingleton<AuthService>();
 		builder.Services.AddSingleton<NotificationService>();
+		builder.Services.AddSingleton<LocationService>();
 
 		// Register view models
 		builder.Services.AddTransient<LoginViewModel>();
 		builder.Services.AddTransient<RegisterViewModel>();
 		builder.Services.AddTransient<DiscoverViewModel>();
 		builder.Services.AddTransient<MatchesViewModel>();
+		builder.Services.AddTransient<NearbyViewModel>();
 		builder.Services.AddTransient<ChatsViewModel>();
 		builder.Services.AddTransient<ChatDetailViewModel>();
 		builder.Services.AddTransient<ProfileViewModel>();
@@ -44,6 +46,7 @@ public static class MauiProgram
 		builder.Services.AddTransient<RegisterPage>();
 		builder.Services.AddTransient<DiscoverPage>();
 		builder.Services.AddTransient<MatchesPage>();
+		builder.Services.AddTransient<NearbyPageSimple>();
 		builder.Services.AddTransient<ChatsPage>();
 		builder.Services.AddTransient<ChatDetailPage>();
 		builder.Services.AddTransient<ProfilePage>();
