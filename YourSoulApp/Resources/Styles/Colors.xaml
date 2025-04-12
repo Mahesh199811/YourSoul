@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
-<ResourceDictionary 
+<ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <!-- Note: For Android please see also Platforms\Android\Resources\values\colors.xml -->
 
+    <!-- Base Colors -->
     <Color x:Key="Primary">#512BD4</Color>
     <Color x:Key="PrimaryDark">#ac99ea</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>
@@ -19,6 +20,20 @@
     <Color x:Key="MidnightBlue">#190649</Color>
     <Color x:Key="OffBlack">#1f1f1f</Color>
 
+    <!-- Enhanced Colors for Gradients -->
+    <!-- Blue-Violet Mix Colors -->
+    <Color x:Key="BlueVioletLight">#7B68EE</Color> <!-- Medium Slate Blue -->
+    <Color x:Key="BlueVioletMedium">#6A5ACD</Color> <!-- Slate Blue -->
+    <Color x:Key="BlueVioletDark">#483D8B</Color> <!-- Dark Slate Blue -->
+    <Color x:Key="IndigoLight">#8A2BE2</Color> <!-- Blue Violet -->
+    <Color x:Key="IndigoDark">#4B0082</Color> <!-- Indigo -->
+    <Color x:Key="RoyalBlueLight">#4169E1</Color> <!-- Royal Blue -->
+    <Color x:Key="RoyalBlueDark">#0000CD</Color> <!-- Medium Blue -->
+    <Color x:Key="GreenLight">#32CD32</Color>
+    <Color x:Key="GreenDark">#006400</Color>
+    <Color x:Key="OrangeLight">#FFA500</Color>
+    <Color x:Key="OrangeDark">#FF4500</Color>
+
     <Color x:Key="Gray100">#E1E1E1</Color>
     <Color x:Key="Gray200">#C8C8C8</Color>
     <Color x:Key="Gray300">#ACACAC</Color>
@@ -28,6 +43,7 @@
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
 
+    <!-- Solid Color Brushes -->
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
@@ -42,4 +58,39 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <!-- Linear Gradient Brushes -->
+    <!-- Blue-Violet Gradient Brushes -->
+    <LinearGradientBrush x:Key="PrimaryGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource BlueVioletLight}" Offset="0.0" />
+        <GradientStop Color="{StaticResource BlueVioletDark}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SecondaryGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource RoyalBlueLight}" Offset="0.0" />
+        <GradientStop Color="{StaticResource IndigoDark}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BlueGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource RoyalBlueLight}" Offset="0.0" />
+        <GradientStop Color="{StaticResource RoyalBlueDark}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GreenGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource GreenLight}" Offset="0.0" />
+        <GradientStop Color="{StaticResource GreenDark}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="OrangeGradientBrush" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource OrangeLight}" Offset="0.0" />
+        <GradientStop Color="{StaticResource OrangeDark}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="LoginBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="{StaticResource BlueVioletLight}" Offset="0.0" />
+        <GradientStop Color="{StaticResource IndigoDark}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="PageBackgroundBrush" Color="White" />
+    <SolidColorBrush x:Key="DarkPageBackgroundBrush" Color="White" />
 </ResourceDictionary>
