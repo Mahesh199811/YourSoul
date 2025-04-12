@@ -27,7 +27,7 @@ namespace YourSoulApp.ViewModels
         private bool _hasPendingMatches;
 
         [ObservableProperty]
-        private string _statusMessage;
+        private string _statusMessage = string.Empty;
 
         public MatchesViewModel(DatabaseService databaseService, AuthService authService)
         {
@@ -49,14 +49,29 @@ namespace YourSoulApp.ViewModels
             try
             {
                 var currentUser = AuthService.CurrentUser;
+                if (currentUser == null)
+                {
+                    StatusMessage = "User not logged in properly. Please log out and log in again.";
+                    return;
+                }
+
                 var allMatches = await _databaseService.GetUserMatchesAsync(currentUser.Id);
 
                 MutualMatches.Clear();
                 PendingMatches.Clear();
 
+                // Create a HashSet to track unique user IDs to prevent duplicates
+                var processedUserIds = new HashSet<int>();
+
                 foreach (var match in allMatches)
                 {
                     int otherUserId = match.User1Id == currentUser.Id ? match.User2Id : match.User1Id;
+
+                    // Skip if we've already processed this user
+                    if (processedUserIds.Contains(otherUserId))
+                        continue;
+
+                    processedUserIds.Add(otherUserId);
                     var otherUser = await _databaseService.GetUserAsync(otherUserId);
 
                     if (match.IsMutualMatch)
@@ -106,6 +121,12 @@ namespace YourSoulApp.ViewModels
             try
             {
                 var currentUser = AuthService.CurrentUser;
+                if (currentUser == null)
+                {
+                    await Shell.Current.DisplayAlert("Error", "You must be logged in to like users.", "OK");
+                    return;
+                }
+
                 await _databaseService.LikeUserAsync(currentUser.Id, user.Id);
 
                 // Refresh matches
