@@ -55,10 +55,12 @@ namespace YourSoulApp.ViewModels
                     return;
                 }
 
-                var allMatches = await _databaseService.GetUserMatchesAsync(currentUser.Id);
+                // Create new collections instead of just clearing the existing ones
+                // This ensures a complete refresh of the UI
+                var newMutualMatches = new ObservableCollection<User>();
+                var newPendingMatches = new ObservableCollection<User>();
 
-                MutualMatches.Clear();
-                PendingMatches.Clear();
+                var allMatches = await _databaseService.GetUserMatchesAsync(currentUser.Id);
 
                 // Create a HashSet to track unique user IDs to prevent duplicates
                 var processedUserIds = new HashSet<int>();
@@ -74,9 +76,12 @@ namespace YourSoulApp.ViewModels
                     processedUserIds.Add(otherUserId);
                     var otherUser = await _databaseService.GetUserAsync(otherUserId);
 
+                    if (otherUser == null)
+                        continue;
+
                     if (match.IsMutualMatch)
                     {
-                        MutualMatches.Add(otherUser);
+                        newMutualMatches.Add(otherUser);
                     }
                     else if ((match.User1Id == currentUser.Id && !match.User2LikesUser1) ||
                              (match.User2Id == currentUser.Id && !match.User1LikesUser2))
@@ -86,25 +91,32 @@ namespace YourSoulApp.ViewModels
                     else
                     {
                         // This is someone who liked the current user
-                        PendingMatches.Add(otherUser);
+                        newPendingMatches.Add(otherUser);
                     }
                 }
 
-                HasMutualMatches = MutualMatches.Any();
-                HasPendingMatches = PendingMatches.Any();
+                // Now replace the collections with our new ones
+                MainThread.BeginInvokeOnMainThread(() => {
+                    MutualMatches = newMutualMatches;
+                    PendingMatches = newPendingMatches;
 
-                if (!HasMutualMatches && !HasPendingMatches)
-                {
-                    StatusMessage = "No matches yet. Start swiping to find matches!";
-                }
-                else
-                {
-                    StatusMessage = string.Empty;
-                }
+                    HasMutualMatches = MutualMatches.Any();
+                    HasPendingMatches = PendingMatches.Any();
+
+                    if (!HasMutualMatches && !HasPendingMatches)
+                    {
+                        StatusMessage = "No matches yet. Start swiping to find matches!";
+                    }
+                    else
+                    {
+                        StatusMessage = string.Empty;
+                    }
+                });
             }
             catch (Exception ex)
             {
                 StatusMessage = $"Error loading matches: {ex.Message}";
+                System.Diagnostics.Debug.WriteLine($"Error in LoadMatchesAsync: {ex.Message}\n{ex.StackTrace}");
             }
             finally
             {
